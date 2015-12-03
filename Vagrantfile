@@ -13,7 +13,10 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "centos/7"
-
+  # X11
+  config.ssh.forward_x11 = true
+  config.ssh.forward_agent = true
+  
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -23,8 +26,9 @@ Vagrant.configure(2) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network "forwarded_port", guest: 80, host: 8080
-  config.vm.network "forwarded_port", guest: 8080, host: 8081
-  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 8080, host: 8081
+  config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 5901, host: 15901
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -44,6 +48,7 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "1024"
   end
+
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -75,5 +80,6 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, :path => "provision/zsh.sh"
   config.vm.provision :shell, :path => "provision/pyenv.sh"
   config.vm.provision :shell, :path => "provision/tensorflow.sh"
+  config.vm.provision :shell, :path => "provision/gnome.sh"
   
 end
