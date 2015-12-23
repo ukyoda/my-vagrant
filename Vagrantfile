@@ -29,6 +29,7 @@ Vagrant.configure(2) do |config|
   config.vm.network :forwarded_port, guest: 8080, host: 8081
   config.vm.network :forwarded_port, guest: 80, host: 8080
   config.vm.network :forwarded_port, guest: 5901, host: 15901
+  config.vm.network :forwarded_port, guest: 50070, host: 51070
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -46,7 +47,7 @@ Vagrant.configure(2) do |config|
   # config.vm.synced_folder "../data", "/vagrant_data"
 
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "1024"
+    vb.memory = "2048"
   end
 
 
@@ -77,9 +78,12 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
 
   config.vm.provision :shell, :path => "provision/basic.sh"
+  config.vm.provision :shell, :path => "provision/selinux.sh"
   config.vm.provision :shell, :path => "provision/zsh.sh"
-  config.vm.provision :shell, :path => "provision/pyenv.sh"
-  config.vm.provision :shell, :path => "provision/tensorflow.sh"
-  config.vm.provision :shell, :path => "provision/gnome.sh"
+#  config.vm.provision :shell, :path => "provision/pyenv.sh"
+#  config.vm.provision :shell, :path => "provision/tensorflow.sh"
+#  config.vm.provision :shell, :path => "provision/gnome.sh"
+  config.vm.provision :shell, :path => "provision/java.sh"
+  config.vm.provision :shell, :path => "provision/hadoop.sh"
   
 end
