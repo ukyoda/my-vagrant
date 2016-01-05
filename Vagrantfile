@@ -26,10 +26,17 @@ Vagrant.configure(2) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network "forwarded_port", guest: 80, host: 8080
+ 
+  # tomcat, and etc...
   config.vm.network :forwarded_port, guest: 8080, host: 8081
+  # http port
   config.vm.network :forwarded_port, guest: 80, host: 8080
+  # VNC Client
   config.vm.network :forwarded_port, guest: 5901, host: 15901
+  # Hadoop
   config.vm.network :forwarded_port, guest: 50070, host: 51070
+  # Node.js express
+  config.vm.network :forwarded_port, guest: 3000, host: 3001
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -78,12 +85,14 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
 
   config.vm.provision :shell, :path => "provision/basic.sh"
+  config.vm.provision :shell, :path => "provision/emacs.sh"
   config.vm.provision :shell, :path => "provision/selinux.sh"
   config.vm.provision :shell, :path => "provision/zsh.sh"
-#  config.vm.provision :shell, :path => "provision/pyenv.sh"
+  config.vm.provision :shell, :path => "provision/pyenv.sh"
 #  config.vm.provision :shell, :path => "provision/tensorflow.sh"
-#  config.vm.provision :shell, :path => "provision/gnome.sh"
+  config.vm.provision :shell, :path => "provision/gnome.sh"
   config.vm.provision :shell, :path => "provision/java.sh"
-  config.vm.provision :shell, :path => "provision/hadoop.sh"
+#  config.vm.provision :shell, :path => "provision/hadoop.sh"
+  config.vm.provision :shell, :path => "provision/node.sh"
   
 end

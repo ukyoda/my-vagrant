@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 PYTHON_CONFIGURE_OPTS="--enable-unicode=ucs4" pyenv install 2.7.10
 pyenv global 2.7.10

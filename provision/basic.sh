@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 yum update -y
 yum groupinstall -y "Development Tools"

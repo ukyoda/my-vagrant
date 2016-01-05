@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 sudo yum -y groups install xfce
 sudo LANG=C yum groups install -y "GNOME Desktop"

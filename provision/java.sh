@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 #yum install -y java
 yum install -y java-1.7.0 java-1.7.0-devel

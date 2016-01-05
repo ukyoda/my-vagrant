@@ -1,4 +1,6 @@
-#!/bin/env bash
+#!/usr/bin/env bash
+
+useradd hdfs 
 
 cat >> /etc/yum.repos.d/cloudera-cdh5.repo <<EOF
 
