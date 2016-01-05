@@ -94,6 +94,5 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, :path => "provision/java.sh"
   config.vm.provision :shell, :path => "provision/hadoop.sh"
   config.vm.provision :shell, :path => "provision/node.sh"
-#  config.vm.provision :shell, :path => "provision/original.sh"
   
 end
