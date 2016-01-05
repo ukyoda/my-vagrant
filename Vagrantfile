@@ -89,10 +89,11 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, :path => "provision/selinux.sh"
   config.vm.provision :shell, :path => "provision/zsh.sh"
   config.vm.provision :shell, :path => "provision/pyenv.sh"
-#  config.vm.provision :shell, :path => "provision/tensorflow.sh"
+  config.vm.provision :shell, :path => "provision/tensorflow.sh"
   config.vm.provision :shell, :path => "provision/gnome.sh"
   config.vm.provision :shell, :path => "provision/java.sh"
-#  config.vm.provision :shell, :path => "provision/hadoop.sh"
+  config.vm.provision :shell, :path => "provision/hadoop.sh"
   config.vm.provision :shell, :path => "provision/node.sh"
+#  config.vm.provision :shell, :path => "provision/original.sh"
   
 end
