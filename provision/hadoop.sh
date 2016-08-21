@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-useradd hdfs 
-
 cat >> /etc/yum.repos.d/cloudera-cdh5.repo <<EOF
 
 [cloudera-cdh5]
@@ -12,6 +10,8 @@ gpgkey = http://archive.cloudera.com/cdh5/redhat/6/x86_64/cdh/RPM-GPG-KEY-cloude
 gpgcheck = 1
 
 EOF
+
+useradd hdfs
 
 yum install -y hadoop-conf-pseudo.x86_64
 

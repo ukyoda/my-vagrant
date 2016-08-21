@@ -3,3 +3,5 @@
 .DS_Store
 /tmp
 /provision/original.sh
+/share/*
+!/share/empty
