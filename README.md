@@ -17,6 +17,7 @@ Vagrantでいろいろな環境を構築することができます。
     * Node.js (nodebrewのインストール)
     * Python (pyenvのインストール)
     * Java
+    * zsh (prezto環境)
     * git
     * emacs
     * Docker

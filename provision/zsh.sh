@@ -4,7 +4,7 @@
 sudo yum install -y zsh
 
 ## 以下、zshを賢く使うためのフレームワークインストール。
-## zsh or preztoのどちらかを選択
+## oh-my-zsh or preztoのどちらかを選択
 
 # oh-my-zsh install
 #####################################
@@ -33,5 +33,5 @@ sudo chmod a+x ${INSTALL_SHELL}
 sudo -u vagrant zsh ${INSTALL_SHELL}
 sudo rm -rf ${INSTALL_SHELL}
 
-# change shell 
+# change shell
 sudo -u root chsh vagrant -s /bin/zsh
